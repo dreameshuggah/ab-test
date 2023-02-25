@@ -50,7 +50,7 @@ It is calculated using the following equation:
 
 4. Calculate the p-value, which is the probability that the Null hypothesis is correct given the results observed in the test. P-values are determined via lookup tables using the value of the z-score calculated in the previous step, or using code functions such as `pnorm()` in R or `scipy.stats.norm` in Python.
 
-Finally, if the p-value is less than the significance level alpha, we say that the results are statistically significant and reject the Null hypothesis.
+Finally, if the p-value is less than the significance level $\alpha$, we say that the results are statistically significant and reject the Null hypothesis.
 
-In this example, p-value was less than $alpha$, which means that we can safely reject the null hypothesis and determine that the changes in message B could in fact be attributed to an increase in conversion rate.
+In this example, p-value was less than $\alpha$, which means that we can safely reject the null hypothesis and determine that the changes in message B could in fact be attributed to an increase in conversion rate.
 
