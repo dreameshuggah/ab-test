@@ -48,7 +48,7 @@ It is calculated using the following equation:
 
 <p align=center>$Z = \frac{CR_b - CR_a}{SE}$</p>
 
-4. Calculate the p-value, which is the probability that the Null hypothesis is correct given the results observed in the test. P-values are determined via lookup tables using the value of the z-score calculated in the previous step, or using code functions such as `pnorm()` in R or `scipy.stats.norm` in Python.
+4. Calculate the p-value, which is the probability that the Null hypothesis is correct given the results observed in the test. The p-value is determined via lookup tables by using the value of the z-score calculated in the previous step, or it can be calculated using code functions such as `pnorm()` in R or `scipy.stats.norm` in Python.
 
 Finally, if the p-value is less than the significance level $\alpha$, we say that the results are statistically significant and reject the Null hypothesis.
 
