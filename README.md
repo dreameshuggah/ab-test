@@ -1,16 +1,16 @@
 # ab-test
 An app for A/B testing.
 
-This Streamlit [app]() can be used to run an A/B test. In non-technical terms, an A/B test is a statistical method that 
+This Streamlit [app](https://el-grudge-ab-test-app-l2gvyr.streamlit.app/) can be used to run an A/B test. In non-technical terms, an A/B test is a statistical method that 
 can be used to determine whether a hypothesis is true. Check [below](#hypothesis-testing-discussion) for a more detailed discussion.
 
 You can run a demo by checking the "Use example file" checkbox:
 
-![Alt Text](gifs/use_example.gif)
+![Alt Text](images/use_example.gif)
 
 Otherwise, upload your own file and select columns that you want to analyze:
 
-![Alt Text](gifs/upload_file.gif)
+![Alt Text](images/upload_file.gif)
 
 The code for this tool was based on the Strealit tutorial example repo, which can be found [here](https://github.com/streamlit/example-app-ab-testing).
 
@@ -20,8 +20,7 @@ In the sample file we have the results of a marketing campaign from a travel web
 
 To set up the test, the following data was collected:
 
-* The number of visitors who saw message A $$ \Delta x = x_1 - x_0 $$
-* $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
+* The number of visitors who saw message A 
 * The number of visitors who saw message B Nb
 * The number of visitors who converted from message A Ca
 * The number of visitors who converted from message B Cb
