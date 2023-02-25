@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from ab_test.functions import plot_chart, run_ab_test
+from utils.functions import plot_chart, run_ab_test
 
 st.set_page_config(
     page_title="A/B Testing App",
