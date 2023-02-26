@@ -43,14 +43,16 @@ Now, to test our hypothesis we do the following:
 
 <p align=center>$SE = \sqrt{(\frac{Cv_a+Cv_b}{N_a+N_b})\times(1 - \frac{Cv_a+Cv_b}{N_a+N_b})\times(\frac{1}{N_a}+\frac{1}{N_b})}$</p>
 
-3. Calculate the z-score. The z-score is used to measure the distance between a data point and the mean using standard deviation. 
-It is calculated using the following equation:
+3. Calculate the z-score. The z-score is used to measure the distance between a data point and the mean using standard deviation. In our case, it is actually the distance between the conversion rate of the new message and that of the original message. It is calculated using the following equation:
 
 <p align=center>$Z = \frac{CR_b - CR_a}{SE}$</p>
 
-4. Calculate the p-value, which is the probability that the Null hypothesis is correct given the results observed in the test. The p-value is determined via lookup tables by using the value of the z-score calculated in the previous step, or it can be calculated using code functions such as `pnorm()` in R or `scipy.stats.norm` in Python.
+4. Calculate the p-value, which is the probability that $H_0$ is correct given the results observed in the test. Consider the below curve:
 
-Finally, if the p-value is less than the significance level $\alpha$, we say that the results are statistically significant and reject the Null hypothesis.
+<p align=center>![Alt Text](images/area_under_curve.png)</p>
+
+If the p-value is between the shaded area, then we accept $H_0$. In other words, the difference between the conversion rate of message B and the conversion rate of message A is not large enough for us to determine that it was not random. Conversely, if the p-value falls in either shaded area, then we reject $H_0$, and conclude that the difference is statistically significant. In a one-sided test, we can find out whether the direction of the difference, i.e. whether $CR_b$ is signifianctly less than (left shaded area) or greater than $CR_a$ (right shaded area). On the other hand, a two-sided tests tells whether the difference is large enough (falls under either region), regardless of direction (however, with a positive uplift we can conclude that message B was better). The p-value is determined via lookup tables using the value of the z-score calculated in the previous step, or it can be calculated using code functions such as `pnorm()` in R or `scipy.stats.norm` in Python.
+
+The point at which the shaded area starts is determined by $\alpha$. So, if the p-value is less than the significance level $\alpha$, we say that the results are statistically significant and reject $H_0$.
 
 In this example, p-value was less than $\alpha$, which means that we can safely reject the null hypothesis and determine that the changes in message B could in fact be attributed to an increase in conversion rate.
-
