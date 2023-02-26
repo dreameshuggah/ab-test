@@ -1,8 +1,7 @@
 # ab-test
 An app for A/B testing.
 
-This Streamlit [app](https://el-grudge-ab-test-app-l2gvyr.streamlit.app/) can be used to run an A/B test. In non-technical terms, an A/B test is a statistical method that 
-can be used to determine whether a hypothesis is true. Check [below](#hypothesis-testing-discussion) for a more detailed discussion.
+This Streamlit [app](https://el-grudge-ab-test-app-l2gvyr.streamlit.app/) can be used to run an A/B test. In non-technical terms, an A/B test is a statistical method that can be used to determine whether a hypothesis is true, for example, whether a website's new layout would generate more traffic. Check [below](#hypothesis-testing-discussion) for a more detailed discussion.
 
 You can run a demo by checking the "Use example file" checkbox:
 
@@ -53,7 +52,7 @@ Now, to test our hypothesis we do the following:
   <img src="images/area_under_curve.png" alt="drawing" width="200"/>
 </p>
 
-If the p-value is between the shaded area, then we accept $H_0$. In other words, the difference between the conversion rate of message B and the conversion rate of message A is not large enough for us to determine that it was not random. Conversely, if the p-value falls in either shaded area, then we reject $H_0$, and conclude that the difference is statistically significant. In a one-sided test, we can find out whether the direction of the difference, i.e. whether $CR_b$ is signifianctly less than (left shaded area) or greater than $CR_a$ (right shaded area). On the other hand, a two-sided tests tells whether the difference is large enough (falls under either region), regardless of direction (however, with a positive uplift we can conclude that message B was better). The p-value is determined via lookup tables using the value of the z-score calculated in the previous step, or it can be calculated using code functions such as `pnorm()` in R or `scipy.stats.norm` in Python.
+If the p-value is between the shaded areas, then we accept $H_0$. In other words, the difference between the conversion rate of message B and the conversion rate of message A is not large enough for us to determine that it was not random. Conversely, if the p-value falls in either shaded area, then we reject $H_0$, and conclude that the difference is statistically significant. In a one-sided test, we can find out whether the direction of the difference, i.e. whether $CR_b$ is signifianctly less than (left shaded area) or greater than $CR_a$ (right shaded area). On the other hand, a two-sided tests tells whether the difference is large enough (falls under either region), regardless of direction (however, with a positive uplift we can conclude that message B was better). The p-value is determined via lookup tables using the value of the z-score calculated in the previous step, or it can be calculated using code functions such as `pnorm()` in R or `scipy.stats.norm` in Python.
 
 The point at which the shaded area starts is determined by $\alpha$. So, if the p-value is less than the significance level $\alpha$, we say that the results are statistically significant and reject $H_0$.
 
